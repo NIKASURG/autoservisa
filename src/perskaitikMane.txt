@@ -1,0 +1,3 @@
+Aplikacijoje galima prisiregistruoti, prisijunkti, prisijunkti su google, ikelti usakima i firebase, dark mode,
+buildas neveike
+https://github.com/NIKASURG/autoservisa github repozitorija
