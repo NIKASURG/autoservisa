@@ -18,7 +18,7 @@ function RegisterPage() {
     <div className="d-flex align-items-center py-4 bg-body-tertiary  position-absolute top-50 start-50 translate-middle shadow-lg ">
       <main className="form-signin w-100 m-auto ">
         <form onSubmit={prisiregistruoti}>
-          <h1 className="h3 mb-3 fw-normal">Prisijunkite</h1>
+          <h1 className="h3 mb-3 fw-normal">Prisiregistruokite</h1>
 
           <div className="form-floating">
             <input

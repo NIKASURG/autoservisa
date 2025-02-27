@@ -30,10 +30,9 @@ function App() {
           <Route path="/uzsakymas" element={<Forma/>} />
           <Route path="/manoUsakymai" element={<ManoUsakymai/>} />
           
-          {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
-      <DrkLight/>
     </BrowserRouter>
+      <DrkLight/>
     </div>
   );
 }
