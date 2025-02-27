@@ -4,15 +4,16 @@ const user = auth.currentUsesr;
 
 export function register(vardas,pavarde,email,slaptazodis){
 const auth = getAuth();
-if(vardas = null){
+if(vardas === null){
     return('Ivaskite varda')
 }
-if(pavarde = null){
+if(pavarde === null){
     return('Ivaskite pavarde')
 }
 createUserWithEmailAndPassword(auth, email, slaptazodis)
   .then((userCredential) => {
     // Signed up 
+    console.log(vardas,pavarde)
         const user = userCredential.user;
         updateProfile(auth.currentUser, {
             displayName: vardas + ' ' + pavarde

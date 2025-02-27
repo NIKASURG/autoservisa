@@ -10,7 +10,7 @@ function RegisterPage() {
 
         )
         if(target.vardas.value,target.pavarde.value,target.ELpastas.value,target.slaptazodis.value){
-            
+
         }
         register(target.vardas.value,target.pavarde.value,target.ELpastas.value,target.slaptazodis.value)
     }
@@ -67,7 +67,10 @@ function RegisterPage() {
           <button className="btn btn-primary w-100 py-2" type="submit">
             Prisiregistruoti
           </button>
+          <p>Jau turite paskyra?<a href="/login">Prisijunkite</a></p>
+          
           <p className="mt-5 mb-3 text-body-secondary">© 1253-2025</p>
+
         </form>
       </main>
     </div>

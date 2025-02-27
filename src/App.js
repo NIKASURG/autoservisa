@@ -6,11 +6,15 @@ import Header from './elementai/header'
 import LoginPage from './elementai/loginPage';
 import RegisterPage from './elementai/registracija'
 import {auth} from './firebase/config'
+import Forma from './elementai/forma'
+import ManoUsakymai from './elementai/ManoUsakymai'
+import DrkLight from './elementai/darkLigth';
 function App() {
-  const [user,cangeUser]= useState(null)
+  const [user,setUser]= useState(null)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // cangeUser(currentUser);
+      console.log(currentUser)
+      setUser(currentUser);
   console.log(user)
     });
     return () => unsubscribe();
@@ -18,17 +22,18 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <p>{user}</p>
       <BrowserRouter>
       <Routes>
-          {/* <Route index element={<Home />} /> */}
+
           <Route path="/login" element={<LoginPage/>} />
           <Route path="/register" element={<RegisterPage/>} />
+          <Route path="/uzsakymas" element={<Forma/>} />
+          <Route path="/manoUsakymai" element={<ManoUsakymai/>} />
           
           {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
+      <DrkLight/>
     </BrowserRouter>
-      
     </div>
   );
 }

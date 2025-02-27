@@ -21,10 +21,9 @@ function Header(){
         </a>
 
         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" className="nav-link px-2 link-secondary">Overview</a></li>
-          <li><a href="#" className="nav-link px-2 link-body-emphasis">Inventory</a></li>
-          <li><a href="#" className="nav-link px-2 link-body-emphasis">Customers</a></li>
-          <li><a href="#" className="nav-link px-2 link-body-emphasis">Products</a></li>
+          <li><a href="/uzsakymas" className="nav-link px-2 link-secondary">Užsakyti</a></li>
+          <li><a href="/manoUsakymai" className="nav-link px-2 link-body-emphasis">Mano užsakymai</a></li>
+     
         </ul>
         <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" className="form-control" placeholder="Search..." aria-label="Search"></input>
@@ -43,7 +42,11 @@ function Header(){
         </div>:
         <div>
 <p>Sveika/s {user.displayName}</p>
-        <button onClick={atsijungti}> Atsijungti</button>
+
+        <button onClick={atsijungti} type="button" class="btn btn-default btn-sm border border-primary">
+          <span class="glyphicon glyphicon-log-out" ></span>Atsijungti
+        </button>
+      
         </div>
         }
         
