@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React ,{useState, useEffect} from 'react';
 import './App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import{onAuthStateChanged} from 'firebase/auth'
+import Header from './elementai/header'
+import LoginPage from './elementai/loginPage';
+import RegisterPage from './elementai/registracija'
+import {auth} from './firebase/config'
 function App() {
+  const [user,cangeUser]= useState(null)
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      // cangeUser(currentUser);
+  console.log(user)
+    });
+    return () => unsubscribe();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <p>{user}</p>
+      <BrowserRouter>
+      <Routes>
+          {/* <Route index element={<Home />} /> */}
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/register" element={<RegisterPage/>} />
+          
+          {/* <Route path="*" element={<NoPage />} /> */}
+      </Routes>
+    </BrowserRouter>
+      
     </div>
   );
 }

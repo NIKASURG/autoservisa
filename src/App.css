@@ -1,11 +1,14 @@
+body,html{
+  min-height: 100vh !important;
+margin: 15px
+}
 .App {
   text-align: center;
+  min-height: 100vh !important;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
